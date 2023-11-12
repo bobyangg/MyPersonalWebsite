@@ -65,13 +65,15 @@ hr.solid {
     margin-right:18vh;
     height:78vh;
     background:white;
-    opacity: 0.8;
     border:1px solid blue;
+    z-index: 0;
+    position: relative;
 }
 
 .summary-text{
     color: black;
-    padding-top:40vh;
+    font-size:medium;
+    padding-top:6vh;
     font-family: monospace;
     overflow: hidden;
     border-right: .15em solid white;
@@ -91,7 +93,7 @@ hr.solid {
 }
 
 .contact{
-    padding-top:3vh;
+    padding-top:8vh;
     padding-bottom:2vh;
 }
 
@@ -129,6 +131,7 @@ hr.solid {
 
 .summary-text-2{
     color: black;
+    font-size: medium;
     font-family: monospace;
     overflow: hidden;
     border-right: .15em solid white;
@@ -138,4 +141,5 @@ hr.solid {
     animation: typing 4s steps(30, end), blink-caret .5s step-end infinite;
     animation-fill-mode: both;
     animation-delay:3s;
+    padding-top:2vh;
 }
