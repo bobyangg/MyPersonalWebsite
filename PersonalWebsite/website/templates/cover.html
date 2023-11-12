@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{%static 'stylecover.css'%}">
+    <script src="https://kit.fontawesome.com/a7e60a82c4.js" crossorigin="anonymous"></script>
+    <title>Bob Yang's Personal Portfolio</title>
+</head>
+<body onload="typeWriter()">
+    <header>
+        <div class="navbar">
+            <div class="logo"><a href="#">Bob Yang.</a></div>
+            <ul class="links">
+                <li><a href= "{% url 'website:cover' %}">Home</a> </li>
+                <li><a href= "{% url 'website:project_index' %}">Projects</a> </li>
+                <li><a href= "{% url 'website:work' %}">Work</a> </li>
+                <li><a href= "{% url 'website:about' %}">About</a> </li>
+                <li><a href= "{% url 'website:resume' %}">Resume</a> </li>
+            </ul>
+        </div>
+        <hr class="divider">
+    </header>
+
+    <section class="description">
+
+        <div class="profile-pic"></div>
+        <div class="summary">
+            <p class="summary-text">
+                Hi there! My name is Bob and I'm a 2nd year computer science student at the University of Ottawa.
+            </p>
+            <p class="summary-text-2">
+                I'm an aspiring software developer and looking expand my knowledge in data science and machine learning.
+            </p>
+
+            <p class="contact">
+                Contact me:
+            </p>
+        </div>
+        <div class="wrapper">
+
+            <button class="button" onclick="window.open('mailto:bobyang2004@gmail.com');">
+                <div class="icon">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+            </button>
+
+            <button class="button" onclick="window.open('https://ca.linkedin.com/in/bob-yang-247698222');">
+                <div class="icon">
+                    <i class="fa-brands fa-linkedin"></i>
+                </div>
+            </button>
+
+            <button class="button" onclick="window.open('https://github.com/bobyangg');">
+                <div class="icon">
+                    <i class="fa-brands fa-github"></i>
+                </div>
+            </button>
+        </div>
+
+        
+    </section>
+</body>
+</html>

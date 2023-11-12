@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{%static 'styleproject.css'%}">
+    <title>Bob Yang: Projects</title>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo"><a href="#">Bob Yang.</a></div>
+            <ul class="links">
+                <li><a href= "{% url 'website:cover' %}">Home</a> </li>
+                <li><a href= "{% url 'website:project_index' %}">Projects</a> </li>
+                <li><a href= "{% url 'website:work' %}">Work</a> </li>
+                <li><a href= "{% url 'website:about' %}">About</a> </li>
+                <li><a href= "{% url 'website:resume' %}">Resume</a> </li>
+            </ul>
+        </div>
+
+        <hr class="divider">
+    </header>
+
+    <div class="container">
+        <div class="flex-container">
+
+            {% for project in projects %}
+            <div class="flex-item">
+                <a href="{{ project.link }}">
+
+                    <div class="flex-img">
+                        <img class='project-img' src="{{ project.image.url }}" alt=""></img>
+                    </div>
+
+                    <div class="flex-title">
+                        <span class="project-title">{{ project.title }}</span>
+                        <br>
+                        <span class="project-meta"> {{ project.description }}</span>
+                        <br>
+                        <span class="project-meta"> Tech stack: {{ project.technology }}</span>
+                    </div>
+
+                </a>
+
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

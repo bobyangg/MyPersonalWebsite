@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{%static 'stylework.css'%}">
+    <title>Bob Yang: Work</title>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo"><a href="#">Bob Yang.</a></div>
+            <ul class="links">
+                <li><a href= "{% url 'website:cover' %}">Home</a> </li>
+                <li><a href= "{% url 'website:project_index' %}">Projects</a> </li>
+                <li><a href= "{% url 'website:work' %}">Work</a> </li>
+                <li><a href= "{% url 'website:about' %}">About</a> </li>
+                <li><a href= "{% url 'website:resume' %}">Resume</a> </li>
+            </ul>
+        </div>
+
+        <hr class="divider">
+    </header>
+
+    <div class="container">
+        <div class="flex-container">
+
+            {% for work in works %}
+            <div class="flex-item">
+                <a href="{{ work.link }}">
+
+                    <div class="flex-img">
+                        <img class='project-img' src="{{ work.image.url }}" alt=""></img>
+                    </div>
+
+                    <div class="flex-title">
+                        <span class="work-title">{{ work.title }}</span>
+                        <br>
+                        <span class="work-meta"> {{ work.description }}</span>
+                        <br>
+                        <span class="work-meta"> {{ work.description2 }}</span>
+                    </div>
+
+                </a>
+
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
